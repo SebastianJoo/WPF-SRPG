@@ -5,7 +5,7 @@ using Engine.Models;
 
 namespace Engine.ViewModels
 {
-    class GameSession
+    public class GameSession
     {
         public Player CurrentPlayer { get; set; }
 
