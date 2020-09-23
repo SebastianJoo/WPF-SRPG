@@ -4,10 +4,42 @@ namespace Engine.Models
 {
     public class Player : INotifyPropertyChanged
     {
+
+        private string _name;
+        private string _characterClass;
         private int _experiencePoints;
-        public string Name { get; set; }
-        public string CharacterClass { get; set; }
-        public int HitPoints { get; set; }
+        private int _hitPoints;
+        private int _gold;
+        private int _level;
+
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+        public string CharacterClass
+        {
+            get { return _characterClass; }
+            set
+            {
+                _characterClass = value;
+                OnPropertyChanged("CharacterClass");
+            }
+        }
+        public int HitPoints
+        {
+            get { return _hitPoints; }
+            set
+            {
+                _hitPoints = value;
+                OnPropertyChanged("HitPoints");
+            }
+
+        }
         public int ExperiencePoints
         {
             get { return _experiencePoints; }
@@ -17,8 +49,24 @@ namespace Engine.Models
                 OnPropertyChanged("ExperiencePoints");
             }
         }
-        public int Level { get; set; }
-        public int Gold { get; set; }
+        public int Level
+        {
+            get { return _level; }
+            set
+            {
+                _level = value;
+                OnPropertyChanged("Level");
+            }
+        }
+        public int Gold
+        {
+            get { return _gold; }
+            set
+            {
+                _gold = value;
+                OnPropertyChanged("Gold");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
