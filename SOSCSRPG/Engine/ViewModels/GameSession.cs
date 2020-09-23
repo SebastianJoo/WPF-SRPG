@@ -18,7 +18,6 @@ namespace Engine.ViewModels
             CurrentPlayer.Gold = 1000000;
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 1;
-
         }
     }
 }
