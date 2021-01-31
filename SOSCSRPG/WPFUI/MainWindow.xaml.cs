@@ -26,11 +26,10 @@ namespace WPFUI
         public MainWindow()
         {
             InitializeComponent();
-
+            
             _gameSession = new GameSession();
 
             DataContext = _gameSession;
-            
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
