@@ -12,6 +12,7 @@ namespace Engine.ViewModels
     public class GameSession : INotifyPropertyChanged
     {
         private Location _currentLocation;
+        public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation
         {
@@ -23,8 +24,22 @@ namespace Engine.ViewModels
                 OnPropertyChanged("CurrentLocation");
             }
         }
-        public World CurrentWorld { get; set; }
-
+        public bool HasLocationToNorth
+        {
+            get { return CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1) != null; }
+        }
+        public bool HasLocationToWest
+        {
+            get { return CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1 , CurrentLocation.YCoordinate) != null; }
+        }
+        public bool HasLocationToEast
+        {
+            get { return CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate) != null; }
+        }
+        public bool HasLocationToSouth
+        {
+            get { return CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1) != null; }
+        }
         public GameSession()
         {
             CurrentPlayer = new Player
