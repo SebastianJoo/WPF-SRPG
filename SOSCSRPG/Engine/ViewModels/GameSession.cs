@@ -46,7 +46,7 @@ namespace Engine.ViewModels
         }
         public GameSession()
         {
-            CurrentPlayer = new Player
+            CurrentPlayer = new Player                                      
             {
                 Name = "Sebbe",
                 CharacterClass = "Fighter",
@@ -56,12 +56,9 @@ namespace Engine.ViewModels
                 Level = 1
             };
 
-
-            WorldFactory factory = new WorldFactory();
-            CurrentWorld = factory.CreateWorld();
+            CurrentWorld = WorldFactory.CreateWorld();
 
             CurrentLocation = CurrentWorld.LocationAt(0, 0);
-
         }
         public void MoveNorth()
         {
