@@ -21,7 +21,6 @@ namespace Engine.Factories
                 new GameItem(9002, "Snakeskin", 2)
             };
         }
-
         public static GameItem CreateGameItem(int itemTypeId)
         {
             GameItem standardItem = _standardGameItems

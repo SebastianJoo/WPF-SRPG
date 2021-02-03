@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    public class Player : BaseNotificationClass
+    public class Player : BaseNotificationClass //LivingEntities class should be added after adding monsters. 
     {
-
         private string _name;
         private string _characterClass;
         private int _experiencePoints;

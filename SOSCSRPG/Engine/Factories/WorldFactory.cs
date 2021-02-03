@@ -44,6 +44,8 @@ namespace Engine.Factories
             newWorld.AddLocation(0, 1, "Herbalist's hut",
                 "You see a small hut, with plants drying from the roof.",
                 "/Engine;component/Images/Locations/HerbalistsHut.png");
+            
+            newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestById(1));
 
             newWorld.AddLocation(0, 2, "Herbalist's garden",
                 "There are many plants here, with snakes hiding behind them.",
@@ -51,6 +53,5 @@ namespace Engine.Factories
 
             return newWorld;
         }
-       
     }
 }
