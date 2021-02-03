@@ -26,6 +26,8 @@ namespace Engine.ViewModels
                 OnPropertyChanged(nameof(HasLocationToWest));
                 OnPropertyChanged(nameof(HasLocationToEast));
                 OnPropertyChanged(nameof(HasLocationToSouth));
+
+                GivePlayerQuestAtLocation();
             }
         }
         public bool HasLocationToNorth
@@ -80,13 +82,22 @@ namespace Engine.ViewModels
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate);
             }
-
         }
         public void MoveSouth()
         {
             if (HasLocationToSouth)
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+            }
+        }
+        private void GivePlayerQuestAtLocation()
+        {
+            foreach (var quest in CurrentLocation.QuestsAvailableHere)
+            {
+                if (!CurrentPlayer.Quests.Any(q => q.PlayerQuest.Id == quest.Id))
+                {
+                    CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                }
             }
         }
     }
