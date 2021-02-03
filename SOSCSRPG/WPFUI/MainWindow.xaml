@@ -115,7 +115,7 @@
                             <DataGridTextColumn Header="Name"
                                                 Binding="{Binding PlayerQuest.Name}"
                                                 Width="*"/>
-                            <DataGridTextColumn Header="Price"
+                            <DataGridTextColumn Header="Done?"
                                                 Binding="{Binding IsCompleted}"
                                                 Width="Auto"/>
                         </DataGrid.Columns>
